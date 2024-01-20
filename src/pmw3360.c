@@ -568,7 +568,7 @@ static enum pixart_input_mode get_input_mode_for_current_layer(const struct devi
 }
 
 static int set_cpi_if_needed(const struct device *dev, uint32_t cpi) {
-    LOG_INF("In pwm3360_set_cpi_if_needed");
+    //LOG_INF("In pwm3360_set_cpi_if_needed");
     struct pixart_data *data = dev->data;
     if (cpi != data->curr_cpi) {
         //return set_cpi(dev, cpi);
@@ -641,15 +641,15 @@ static int pmw3360_report_data(const struct device *dev) {
 
     if (IS_ENABLED(CONFIG_PMW3360_ORIENTATION_0)) {
         x = -raw_x;
-        y = raw_y;
+        y = -raw_y;
     } else if (IS_ENABLED(CONFIG_PMW3360_ORIENTATION_90)) {
-        x = raw_y;
+        x = -raw_y;
         y = -raw_x;
     } else if (IS_ENABLED(CONFIG_PMW3360_ORIENTATION_180)) {
         x = raw_x;
-        y = -raw_y;
+        y = raw_y;
     } else if (IS_ENABLED(CONFIG_PMW3360_ORIENTATION_270)) {
-        x = -raw_y;
+        x = raw_y;
         y = raw_x;
     }
 
