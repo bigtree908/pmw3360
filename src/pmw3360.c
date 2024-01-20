@@ -568,7 +568,7 @@ static enum pixart_input_mode get_input_mode_for_current_layer(const struct devi
 }
 
 static int set_cpi_if_needed(const struct device *dev, uint32_t cpi) {
-//    LOG_INF("In pwm3360_set_cpi_if_needed");
+    LOG_INF("In pwm3360_set_cpi_if_needed");
     struct pixart_data *data = dev->data;
     if (cpi != data->curr_cpi) {
         return set_cpi(dev, cpi);
@@ -577,7 +577,7 @@ static int set_cpi_if_needed(const struct device *dev, uint32_t cpi) {
 }
 
 static int pmw3360_report_data(const struct device *dev) {
-//    LOG_INF("In pwm3360_report_data");
+    LOG_INF("In pwm3360_report_data");
     struct pixart_data *data = dev->data;
     uint8_t buf[PMW3360_BURST_SIZE];
 
